@@ -188,24 +188,40 @@ import 'package:flutter/material.dart';
 //               )))));
 // }
 void main() {
-  runApp(MaterialApp(
-      home: Scaffold(
-          // backgroundColor: Colors.amberAccent,
-          appBar: AppBar(
-            title: Text('My First App'),
-            centerTitle: true,
-            // backgroundColor: Colors.deepPurpleAccent[300],
-          ),
-          body: Padding(
-            padding: EdgeInsets.all(8),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(Icons.settings),
-                Icon(Icons.settings),
-                Icon(Icons.settings),
-                Icon(Icons.settings)
-              ],
+  // runApp(MaterialApp(
+  //     home: Scaffold(
+  //         // backgroundColor: Colors.amberAccent,
+  //         appBar: AppBar(
+  //           title: Text('My First App'),
+  //           centerTitle: true,
+  //           // backgroundColor: Colors.deepPurpleAccent[300],
+  //         ),
+  //         body: Padding(
+  //           padding: EdgeInsets.all(8),
+  //           child: Column(
+  //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //             children: [
+  //               Icon(Icons.settings),
+  //               Icon(Icons.settings),
+  //               Icon(Icons.settings),
+  //               Icon(Icons.settings)
+  //             ],
+  //           ),
+  //         ))));
+
+  runApp(FlutterApp());
+}
+
+// this helps in hot reloading...just CTRL + S hot reloads
+class FlutterApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text('Stateless Demo'),
             ),
-          ))));
+            backgroundColor: Colors.red,
+            body: Padding()));
+  }
 }
