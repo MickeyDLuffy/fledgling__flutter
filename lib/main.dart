@@ -115,9 +115,10 @@
 import 'package:flutter/material.dart';
 
 import 'WebView.dart';
+import 'WowPizzaProject/HomePage.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: WebViewApp(),
+    home: PizzaHomePage(),
   ));
 }

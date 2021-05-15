@@ -9,7 +9,7 @@ class WebViewApp extends StatelessWidget {
       appBar: AppBar(
         title: Text('Kraken'),
       ),
-      body: WebView(initialUrl: 'https://kraken.stlghana.com/'),
+      body: WebView(initialUrl: 'https://www.koenig-solutions.com/'),
     );
   }
 }
