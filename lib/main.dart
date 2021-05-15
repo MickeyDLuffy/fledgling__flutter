@@ -115,117 +115,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
-// void main() {
-//   // runApp(MaterialApp(
-//   //     home: Center(
-//   //   child: Text('Emperor D Luffy', textDirection: TextDirection.ltr),
-//   // )));
-//
-//   // runApp(MaterialApp(
-//   //     home: Scaffold(
-//   //         backgroundColor: Colors.amberAccent,
-//   //         appBar: AppBar(
-//   //           title: Text('Dee is Here'),
-//   //           centerTitle: true,
-//   //         ),
-//   //         // body: Center(
-//   //         //     child: Image(
-//   //         //   image: AssetImage('images/planes.jpg'),
-//   //         // )),
-//   //         body: SafeArea(
-//   //           child: Container(
-//   //             width: 500,
-//   //             height: 400,
-//   //             color: Colors.blueAccent,
-//   //             decoration: BoxDecoration(shape: BoxShape.circle),
-//   //             child: Text('Mickey D Ludffy'),
-//   //           ),
-//   //         ))));
-//
-//   runApp(MaterialApp(
-//       home: Scaffold(
-//           backgroundColor: Colors.amberAccent,
-//           appBar: AppBar(
-//             title: Text('Mickey D Luffy'),
-//             centerTitle: true,
-//             // backgroundColor: Colors.deepPurpleAccent[300],
-//           ),
-//           body: SafeArea(
-//               // child: Container(
-//               //   // margin: EdgeInsets.all(30),
-//               //   decoration:
-//               //       BoxDecoration(color: Colors.purple, shape: BoxShape.circle),
-//               //   padding: EdgeInsets.all(20),
-//               //   margin: EdgeInsets.only(left: 30),
-//               //   width: 200,
-//               //   height: 70,
-//               //   // color: Colors.grey,
-//               //   child: Text(
-//               //     'Koenig',
-//               //     textAlign: TextAlign.center,
-//               //   ),
-//               // ),
-//               child: Icon(Icons.Icons.access_alarm_sharp,
-//                   size: 50, color: Colors.red),
-//               child: Column(
-//                 children: [
-//                   Text('Flutter Application Development'),
-//                   Container(
-//                     child: Text('Android Apps'),
-//                     color: Colors.grey,
-//                     margin: EdgeInsets.L(left: 20),
-//                     height: 50,
-//                     width: 70,
-//                   ),
-//                   Container(
-//                     child: Text('IOS Application'),
-//                     color: Colors.amber,
-//                     margin: EdgeInsets.only(left: 20),
-//                     height: 50,
-//                     width: 70,
-//                   )
-//                 ],
-//               )))));
-// }
-// void main() {
-// runApp(MaterialApp(
-//     home: Scaffold(
-//         // backgroundColor: Colors.amberAccent,
-//         appBar: AppBar(
-//           title: Text('My First App'),
-//           centerTitle: true,
-//           // backgroundColor: Colors.deepPurpleAccent[300],
-//         ),
-//         body: Padding(
-//           padding: EdgeInsets.all(8),
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//             children: [
-//               Icon(Icons.settings),
-//               Icon(Icons.settings),
-//               Icon(Icons.settings),
-//               Icon(Icons.settings)
-//             ],
-//           ),
-//         ))));
-
-// runApp(FlutterApp());
-// }
-
-// this helps in hot reloading...just CTRL + S hot reloads
-// class FlutterApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//         home: Scaffold(
-//             appBar: AppBar(
-//               title: Text('Stateless Demo'),
-//             ),
-//             backgroundColor: Colors.red,
-//             body: Padding()));
-//   }
-// }
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -244,152 +133,47 @@ class _MyAppState extends State<MyApp> {
   var firstEmperor = 'Dluffy';
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp(
-    //   home: Scaffold(
-    //     appBar: AppBar(
-    //       title: Text('Stateless Demo'),
-    //     ),
-    //     body: Padding(
-    //       padding: EdgeInsets.all(8),
-    //       child: Column(
-    //         children: [
-    //           Text('Welcome To Koenig',
-    //               style: TextStyle(fontSize: 40, fontFamily: 'Open_Sans')),
-    //           Container(
-    //             child: ElevatedButton(
-    //               child: Text('Click Me'),
-    //               onPressed: () {
-    //                 setState(() {
-    //                   x = 2;
-    //                 });
-    //               },
-    //             ),
-    //           ),
-    //           Image.asset('images/nico$x.png')
-    //         ],
-    //       ),
-    //     ),
-    //   ),
-    // );
-// buttons, and cards
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-          backgroundColor: Colors.deepOrange,
-          title: Text('Android ATC Pizza Place')),
-      body: Padding(
-        padding: EdgeInsets.all(8),
-        child: Column(
-          children: [
-            ElevatedButton.icon(
-                onPressed: () {},
-                icon: Icon(Icons.satellite),
-                label: Text('Satelite')),
-            TextButton.icon(
-                style: TextButton.styleFrom(
-                    primary: Colors.black, backgroundColor: Colors.amberAccent),
-                onPressed: () {},
-                icon: Icon(Icons.save),
-                label: Text('Save')),
-            DropdownButton(
-              items: emperors
-                  .map((emperor) =>
-                      DropdownMenuItem(value: emperor, child: Text(emperor)))
-                  .toList(),
-              onChanged: (String firstEMp) {
-                setState(() {
-                  firstEmperor = firstEMp;
-                });
-              },
-              value: firstEmperor,
-            ),
-            OutlinedButton(onPressed: () {}, child: Text('Current Emperor')),
-            OutlinedButton.icon(
-                onPressed: () {},
-                style: OutlinedButton.styleFrom(
-                    primary: Colors.teal,
-                    textStyle: TextStyle(fontSize: 20),
-                    side: BorderSide(color: Colors.teal)),
-                icon: Icon(Icons.circle),
-                label: Text('Circle')),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              color: Colors.deepPurpleAccent,
-              margin: EdgeInsets.all(10),
-              child: Row(
+            appBar: AppBar(
+                backgroundColor: Colors.deepOrange,
+                title: Text('Android ATC Pizza Place')),
+            body: Padding(
+              padding: EdgeInsets.all(8),
+              child: Column(
                 children: [
-                  Image(
-                    image: AssetImage('images/nico1.jpg'),
-                    width: 50,
-                    height: 100,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text('Book You AirTicket',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 30))
+                  ButtonBar(
+                    alignment: MainAxisAlignment.center,
+                    children: [
+                      OutlinedButton.icon(
+                          icon: Icon(Icons.web),
+                          style: OutlinedButton.styleFrom(
+                              side: BorderSide(
+                                color: Colors.teal,
+                              ),
+                              primary: Colors.teal,
+                              textStyle: TextStyle(
+                                  fontSize: 20, fontFamily: 'Roboto')),
+                          onPressed: () {},
+                          label: Text('Flights')),
+                      OutlinedButton.icon(
+                          icon: Icon(Icons.web),
+                          style: OutlinedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              side: BorderSide(
+                                color: Colors.teal,
+                              ),
+                              primary: Colors.teal,
+                              textStyle: TextStyle(
+                                  fontSize: 20, fontFamily: 'Roboto')),
+                          onPressed: () {},
+                          label: Text('Flights')),
+                    ],
+                  )
                 ],
               ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              color: Colors.deepPurpleAccent,
-              margin: EdgeInsets.all(10),
-              child: Row(
-                children: [
-                  Image(
-                    image: AssetImage('images/nico1.jpg'),
-                    width: 50,
-                    height: 100,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text('Book You AirTicket',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 30))
-                ],
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              color: Colors.deepPurpleAccent,
-              margin: EdgeInsets.all(10),
-              child: Row(
-                children: [
-                  Image(
-                    image: AssetImage('images/nico1.jpg'),
-                    width: 50,
-                    height: 100,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text('Book You AirTicket',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 30))
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.access_alarm),
-        onPressed: () {
-          print('Pressed the FAB');
-        },
-      ),
-    ));
+            )));
   }
 }
