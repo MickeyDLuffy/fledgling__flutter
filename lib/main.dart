@@ -112,19 +112,12 @@
 //   }
 // }
 
-import 'package:falcon_wings/ClassWithScreenArgs.dart';
-import 'package:falcon_wings/HomePage.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
-import 'AnimateWidget.dart';
-import 'Screen0.dart';
-import 'Screen1.dart';
+import 'WebView.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: MainScreen(),
+    home: WebViewApp(),
   ));
 }
