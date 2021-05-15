@@ -117,62 +117,10 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
 
+import 'Screen0.dart';
+
 void main() {
-  runApp(MyApp());
-}
-
-int x = 2;
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  var emperors = ['Dluffy', 'Nico', 'Teach'];
-  var firstEmperor = 'Dluffy';
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.blue,
-              title: Text('Android ATC Pizza Place'),
-              actions: [
-                // PopupMenuButton(
-                //     onSelected: choiceAction,
-                //     itemBuilder: () {
-                //       return Item.choices.map((choice) {
-                //         return PopupMenuItem(
-                //           value: choice,
-                //           child: Text(choice),
-                //         );
-                //       }).toList();
-                //     })
-
-                PopupMenuButton(
-                    onSelected: choiceAction,
-                    itemBuilder: (BuildContext context) {
-                      return Item.choices.map((choice) {
-                        return PopupMenuItem(
-                            value: choice, child: Text(choice));
-                      }).toList();
-                    })
-              ],
-            ),
-            body: Center()));
-  }
-}
-
-void choiceAction(choice) {
-  print('You have selected $choice');
-}
-
-class Item {
-  static const Inbox = 'Inbox';
-  static const SentItems = 'Sent Items';
-  static const JunkEmail = 'Junk E-mail';
-  static const Signout = 'Sing Out';
-
-  static const List choices = [Inbox, SentItems, JunkEmail, Signout];
+  runApp(MaterialApp(
+    home: Screen0(),
+  ));
 }
