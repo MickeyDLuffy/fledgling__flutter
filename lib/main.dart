@@ -112,15 +112,21 @@
 //   }
 // }
 
+import 'package:falcon_wings/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
 
 import 'Screen0.dart';
+import 'Screen1.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Screen0(),
+    home: HomePage(),
+    routes: {
+      '/screen1': (context) => Screen0(),
+      '/screen2': (context) => Screen1(),
+    },
   ));
 }
