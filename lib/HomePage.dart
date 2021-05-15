@@ -24,10 +24,14 @@ class HomePage extends StatelessWidget {
                 },
                 child: Text('Got to screen 2')),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, ClassWithScreenArgs.routeName,
+                onPressed: () async {
+                  final results = await Navigator.pushNamed(
+                      context, ClassWithScreenArgs.routeName,
                       arguments:
                           ScreenArguments('Flutter', 'Welcome here Maities'));
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('$results'))); // snakcbar
                 },
                 child: Text('Sending arguments across pages')),
           ],

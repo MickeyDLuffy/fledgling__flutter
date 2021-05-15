@@ -16,8 +16,30 @@ class ClassWithScreenArgs extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: Text(args.message),
-      ),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(args.message),
+          Padding(
+            padding: EdgeInsets.all(8),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context, 'Approved');
+              },
+              child: Text('Approve'),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context, 'Rejected');
+              },
+              child: Text('Reject'),
+            ),
+          ),
+        ],
+      )),
     );
   }
 }
