@@ -240,33 +240,156 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  var emperors = ['Dluffy', 'Nico', 'Teach'];
+  var firstEmperor = 'Dluffy';
   @override
   Widget build(BuildContext context) {
+    // return MaterialApp(
+    //   home: Scaffold(
+    //     appBar: AppBar(
+    //       title: Text('Stateless Demo'),
+    //     ),
+    //     body: Padding(
+    //       padding: EdgeInsets.all(8),
+    //       child: Column(
+    //         children: [
+    //           Text('Welcome To Koenig',
+    //               style: TextStyle(fontSize: 40, fontFamily: 'Open_Sans')),
+    //           Container(
+    //             child: ElevatedButton(
+    //               child: Text('Click Me'),
+    //               onPressed: () {
+    //                 setState(() {
+    //                   x = 2;
+    //                 });
+    //               },
+    //             ),
+    //           ),
+    //           Image.asset('images/nico$x.png')
+    //         ],
+    //       ),
+    //     ),
+    //   ),
+    // );
+// buttons, and cards
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Stateless Demo'),
-        ),
-        body: Padding(
-          padding: EdgeInsets.all(8),
-          child: Column(
-            children: [
-              Text('Welcome To Koenig'),
-              Container(
-                child: ElevatedButton(
-                  child: Text('Click Me'),
-                  onPressed: () {
-                    setState(() {
-                      x = 2;
-                    });
-                  },
-                ),
+        home: Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.deepOrange,
+          title: Text('Android ATC Pizza Place')),
+      body: Padding(
+        padding: EdgeInsets.all(8),
+        child: Column(
+          children: [
+            ElevatedButton.icon(
+                onPressed: () {},
+                icon: Icon(Icons.satellite),
+                label: Text('Satelite')),
+            TextButton.icon(
+                style: TextButton.styleFrom(
+                    primary: Colors.black, backgroundColor: Colors.amberAccent),
+                onPressed: () {},
+                icon: Icon(Icons.save),
+                label: Text('Save')),
+            DropdownButton(
+              items: emperors
+                  .map((emperor) =>
+                      DropdownMenuItem(value: emperor, child: Text(emperor)))
+                  .toList(),
+              onChanged: (String firstEMp) {
+                setState(() {
+                  firstEmperor = firstEMp;
+                });
+              },
+              value: firstEmperor,
+            ),
+            OutlinedButton(onPressed: () {}, child: Text('Current Emperor')),
+            OutlinedButton.icon(
+                onPressed: () {},
+                style: OutlinedButton.styleFrom(
+                    primary: Colors.teal,
+                    textStyle: TextStyle(fontSize: 20),
+                    side: BorderSide(color: Colors.teal)),
+                icon: Icon(Icons.circle),
+                label: Text('Circle')),
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              color: Colors.deepPurpleAccent,
+              margin: EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  Image(
+                    image: AssetImage('images/nico1.jpg'),
+                    width: 50,
+                    height: 100,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text('Book You AirTicket',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 30))
+                ],
               ),
-              Image.asset('images/nico$x.png')
-            ],
-          ),
+            ),
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              color: Colors.deepPurpleAccent,
+              margin: EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  Image(
+                    image: AssetImage('images/nico1.jpg'),
+                    width: 50,
+                    height: 100,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text('Book You AirTicket',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 30))
+                ],
+              ),
+            ),
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              color: Colors.deepPurpleAccent,
+              margin: EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  Image(
+                    image: AssetImage('images/nico1.jpg'),
+                    width: 50,
+                    height: 100,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text('Book You AirTicket',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 30))
+                ],
+              ),
+            ),
+          ],
         ),
       ),
-    );
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.access_alarm),
+        onPressed: () {
+          print('Pressed the FAB');
+        },
+      ),
+    ));
   }
 }
