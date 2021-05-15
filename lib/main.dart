@@ -119,16 +119,12 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
 
+import 'AnimateWidget.dart';
 import 'Screen0.dart';
 import 'Screen1.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: HomePage(),
-    routes: {
-      '/screen1': (context) => Screen0(),
-      '/screen2': (context) => Screen1(),
-      ClassWithScreenArgs.routeName: (context) => ClassWithScreenArgs()
-    },
+    home: MainScreen(),
   ));
 }
