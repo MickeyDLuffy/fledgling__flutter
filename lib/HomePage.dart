@@ -1,3 +1,5 @@
+import 'package:falcon_wings/ClassWithScreenArgs.dart';
+import 'package:falcon_wings/ScreenArguments.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +22,14 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/screen2');
                 },
-                child: Text('Got to screen 2'))
+                child: Text('Got to screen 2')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, ClassWithScreenArgs.routeName,
+                      arguments:
+                          ScreenArguments('Flutter', 'Welcome here Maities'));
+                },
+                child: Text('Sending arguments across pages')),
           ],
         ),
       ),

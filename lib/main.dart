@@ -112,6 +112,7 @@
 //   }
 // }
 
+import 'package:falcon_wings/ClassWithScreenArgs.dart';
 import 'package:falcon_wings/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
@@ -127,6 +128,7 @@ void main() {
     routes: {
       '/screen1': (context) => Screen0(),
       '/screen2': (context) => Screen1(),
+      ClassWithScreenArgs.routeName: (context) => ClassWithScreenArgs()
     },
   ));
 }
