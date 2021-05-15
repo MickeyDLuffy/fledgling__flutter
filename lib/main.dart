@@ -136,44 +136,43 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-                backgroundColor: Colors.deepOrange,
-                title: Text('Android ATC Pizza Place')),
-            body: Padding(
-              padding: EdgeInsets.all(8),
-              child: Column(
-                children: [
-                  ButtonBar(
-                    alignment: MainAxisAlignment.center,
-                    children: [
-                      OutlinedButton.icon(
-                          icon: Icon(Icons.web),
-                          style: OutlinedButton.styleFrom(
-                              side: BorderSide(
-                                color: Colors.teal,
-                              ),
-                              primary: Colors.teal,
-                              textStyle: TextStyle(
-                                  fontSize: 20, fontFamily: 'Roboto')),
-                          onPressed: () {},
-                          label: Text('Flights')),
-                      OutlinedButton.icon(
-                          icon: Icon(Icons.web),
-                          style: OutlinedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              side: BorderSide(
-                                color: Colors.teal,
-                              ),
-                              primary: Colors.teal,
-                              textStyle: TextStyle(
-                                  fontSize: 20, fontFamily: 'Roboto')),
-                          onPressed: () {},
-                          label: Text('Flights')),
-                    ],
-                  )
-                ],
-              ),
-            )));
+              backgroundColor: Colors.blue,
+              title: Text('Android ATC Pizza Place'),
+              actions: [
+                // PopupMenuButton(
+                //     onSelected: choiceAction,
+                //     itemBuilder: () {
+                //       return Item.choices.map((choice) {
+                //         return PopupMenuItem(
+                //           value: choice,
+                //           child: Text(choice),
+                //         );
+                //       }).toList();
+                //     })
+
+                PopupMenuButton(
+                    onSelected: choiceAction,
+                    itemBuilder: (BuildContext context) {
+                      return Item.choices.map((choice) {
+                        return PopupMenuItem(
+                            value: choice, child: Text(choice));
+                      }).toList();
+                    })
+              ],
+            ),
+            body: Center()));
   }
+}
+
+void choiceAction(choice) {
+  print('You have selected $choice');
+}
+
+class Item {
+  static const Inbox = 'Inbox';
+  static const SentItems = 'Sent Items';
+  static const JunkEmail = 'Junk E-mail';
+  static const Signout = 'Sing Out';
+
+  static const List choices = [Inbox, SentItems, JunkEmail, Signout];
 }
