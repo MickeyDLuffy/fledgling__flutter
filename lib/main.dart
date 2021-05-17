@@ -112,6 +112,7 @@
 //   }
 // }
 
+import 'package:falcon_wings/TabDemo.dart';
 import 'package:falcon_wings/WowPizzaProject/FaceBookWebVIew.dart';
 import 'package:falcon_wings/WowPizzaProject/TwitterWebView.dart';
 import 'package:flutter/material.dart';
@@ -123,7 +124,7 @@ import 'WowPizzaProject/HomePage.dart';
 void main() {
   runApp(MaterialApp(
     // home: PizzaHomePage(),
-    home: BottomNavigation(),
+    home: TabDemo(),
     routes: {
       '/twitter': (context) => TwitterWebVIew(),
       '/facebook': (context) => FaceBookWebVIew(),
