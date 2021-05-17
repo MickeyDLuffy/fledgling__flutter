@@ -112,23 +112,18 @@
 //   }
 // }
 
+import 'package:falcon_wings/ListStyle.dart';
 import 'package:falcon_wings/TabDemo.dart';
 import 'package:falcon_wings/WowPizzaProject/FaceBookWebVIew.dart';
 import 'package:falcon_wings/WowPizzaProject/TwitterWebView.dart';
 import 'package:flutter/material.dart';
 
 import 'BottomNavigation.dart';
-import 'TabBarOnTopBar.dart';
 import 'WebView.dart';
 import 'WowPizzaProject/HomePage.dart';
 
 void main() {
   runApp(MaterialApp(
-    // home: PizzaHomePage(),
-    home: TabDemoOnTopBar(),
-    routes: {
-      '/twitter': (context) => TwitterWebVIew(),
-      '/facebook': (context) => FaceBookWebVIew(),
-    },
+    home: ListStyle(),
   ));
 }
