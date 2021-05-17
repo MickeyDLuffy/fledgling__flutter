@@ -116,12 +116,14 @@ import 'package:falcon_wings/WowPizzaProject/FaceBookWebVIew.dart';
 import 'package:falcon_wings/WowPizzaProject/TwitterWebView.dart';
 import 'package:flutter/material.dart';
 
+import 'BottomNavigation.dart';
 import 'WebView.dart';
 import 'WowPizzaProject/HomePage.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: PizzaHomePage(),
+    // home: PizzaHomePage(),
+    home: BottomNavigation(),
     routes: {
       '/twitter': (context) => TwitterWebVIew(),
       '/facebook': (context) => FaceBookWebVIew(),
