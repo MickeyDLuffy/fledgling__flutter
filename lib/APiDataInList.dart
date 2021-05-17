@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:falcon_wings/ListStyle.dart';
+import 'package:falcon_wings/UserDetailPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -87,6 +88,13 @@ class _ApiDataInListState extends State<ApiDataInList> {
                         ),
                         subtitle: Text(snapshot.data[index].email),
                         trailing: FaIcon(FontAwesomeIcons.arrowCircleRight),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      UserDetailPage(snapshot.data[index])));
+                        },
                       ),
                     );
                   },
