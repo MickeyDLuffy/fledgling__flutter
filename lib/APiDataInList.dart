@@ -59,6 +59,35 @@ class _ApiDataInListState extends State<ApiDataInList> {
         appBar: AppBar(
           title: Text('Api calls'),
         ),
+        drawer: Drawer(
+          child: Column(
+            children: [
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: 50,
+                  ),
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 25,
+                        backgroundImage: NetworkImage(''),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        'Dee Luffy',
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
         body: Container(
           child: FutureBuilder(
             future: getUser(),
