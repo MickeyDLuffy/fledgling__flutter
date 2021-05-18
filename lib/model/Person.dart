@@ -1,3 +1,6 @@
+import 'package:lombok/lombok.dart';
+
+@data
 class Person {
   String firstname;
   String lastname;

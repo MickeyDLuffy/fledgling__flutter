@@ -1,17 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AppBar extends StatelessWidget implements PreferredSizeWidget {
-  const AppBar({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-    );
-  }
-
-  @override
-  // TODO: implement preferredSize
-  Size get preferredSize => throw UnimplementedError();
+class PizzaAppBar extends AppBar {
+  PizzaAppBar({Key key, Widget title})
+      : super(key: key, title: title, actions: <Widget>[
+          new IconButton(icon: Icon(Icons.title), onPressed: () {})
+        ]);
 }

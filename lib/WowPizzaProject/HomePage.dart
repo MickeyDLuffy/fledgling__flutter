@@ -8,6 +8,8 @@ class PizzaHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.orange,
+          shadowColor: Colors.cyanAccent,
+          elevation: 15,
           title: Row(
             children: [
               Text(

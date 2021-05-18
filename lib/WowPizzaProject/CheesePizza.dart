@@ -6,7 +6,9 @@ class CheesePizza extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: ,
+        appBar: AppBar(
+          title: Text('ooh'),
+        ),
       ),
     );
   }
