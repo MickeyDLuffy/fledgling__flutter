@@ -10,13 +10,17 @@ class PizzaHomePage extends StatelessWidget {
           backgroundColor: Colors.orange,
           title: Row(
             children: [
-              Text('WOW Pizza'),
+              Text(
+                'WOW Pizza',
+                style: TextStyle(color: Theme.of(context).accentColor),
+              ),
               Expanded(
                   child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   IconButton(
                     icon: FaIcon(FontAwesomeIcons.twitter),
+                    color: Theme.of(context).accentColor,
                     onPressed: () {
                       print('Twitter clicked');
                       Navigator.pushNamed(context, '/twitter');
@@ -24,6 +28,7 @@ class PizzaHomePage extends StatelessWidget {
                   ),
                   IconButton(
                     icon: FaIcon(FontAwesomeIcons.facebook),
+                    color: Theme.of(context).accentColor,
                     onPressed: () {
                       Navigator.pushNamed(context, '/facebook');
                     },
@@ -32,61 +37,91 @@ class PizzaHomePage extends StatelessWidget {
               ))
             ],
           )),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                ),
-              ),
-              onPressed: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => Screen1()));
-              },
-              child: Text(
-                'Vegetable Pizza',
-                style: TextStyle(
-                    color: Theme.of(context).primaryColor, fontSize: 15),
+      body: ListView(
+        children: [
+          Container(
+            child: Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/vegetable-pizza');
+                    },
+                    child: Text(
+                      'Vegetable Pizza',
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 15),
+                    ),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/cheese-pizza');
+                    },
+                    child: Text(
+                      'Cheese Pizza',
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 15),
+                    ),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/fries');
+                    },
+                    child: Text(
+                      'Fries',
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 15),
+                    ),
+                  ),
+                ],
               ),
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            child: Center(
+              child: Container(
+                child: Image(
+                  image: NetworkImage(
+                      'https://image.shutterstock.com/image-photo/krasnodar-russia-december-27-2018-260nw-1422168644.jpg'),
                 ),
               ),
-              onPressed: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => Screen1()));
-              },
-              child: Text(
-                'Chinese Pizza',
-                style: TextStyle(
-                    color: Theme.of(context).primaryColor, fontSize: 15),
-              ),
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+          ),
+          Container(
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Center(
+                child: Text(
+                  'Hi, i am the pizza Assistant.\n What can i help you order?',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w300),
                 ),
               ),
-              onPressed: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => Screen1()));
-              },
-              child: Text(
-                'Fries',
-                style: TextStyle(
-                    color: Theme.of(context).primaryColor, fontSize: 15),
-              ),
             ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
