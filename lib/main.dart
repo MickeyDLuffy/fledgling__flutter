@@ -120,12 +120,13 @@ import 'package:falcon_wings/WowPizzaProject/VegetablePizza.dart';
 import 'package:flutter/material.dart';
 
 import 'APiDataInList.dart';
+import 'DataTables.dart';
 import 'WowPizzaProject/HomePage.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: PizzaHomePage(),
+    home: DataTables(),
     routes: {
       '/facebook': (context) => FaceBookWebVIew(),
       '/twitter': (context) => TwitterWebVIew(),
