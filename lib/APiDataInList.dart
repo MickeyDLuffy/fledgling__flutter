@@ -64,26 +64,48 @@ class _ApiDataInListState extends State<ApiDataInList> {
             children: [
               Container(
                 child: Padding(
-                  padding: EdgeInsets.only(
-                    top: 50,
-                  ),
+                  padding: EdgeInsets.only(top: 50),
                   child: Column(
                     children: [
                       CircleAvatar(
-                        radius: 25,
-                        backgroundImage: NetworkImage(''),
+                        radius: 50,
+                        backgroundImage: NetworkImage(
+                            'https://randomuser.me/api/portraits/men/75.jpg'),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       Text(
-                        'Dee Luffy',
+                        'John Cena',
                         style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold),
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 30.0,
+              ),
+              ListTile(
+                onTap: () {},
+                leading: Icon(Icons.person, color: Colors.black),
+                title: Text('Your Profile'),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: Icon(Icons.inbox, color: Colors.black),
+                title: Text('Your Inbox'),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: Icon(Icons.assessment, color: Colors.black),
+                title: Text('Your Dashboard'),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: Icon(Icons.settings, color: Colors.black),
+                title: Text('Your Settings'),
               )
             ],
           ),
