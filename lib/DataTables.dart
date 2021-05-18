@@ -35,40 +35,42 @@ class _DataTablesState extends State<DataTables> {
     }
   }
 
-  DataTable datatable() {
-    return DataTable(
-        sortAscending: sort,
-        sortColumnIndex: sortColumn,
-        columns: [
-          DataColumn(
-              label: Text('firstname'),
-              tooltip: 'Firstname',
-              onSort: (columnIndex, ascending) {
-                setState(() {
-                  sort = !sort;
-                  sortColumn = columnIndex;
-                });
-                onSortColumn(columnIndex, ascending);
-              }),
-          DataColumn(
-              label: Text('Last name'),
-              tooltip: 'this is the lastname',
-              onSort: (columnIndex, ascending) {
-                setState(() {
-                  sort = !sort;
-                  sortColumn = columnIndex;
-                });
-                onSortColumn(columnIndex, ascending);
-              }),
-        ],
-        rows: persons
-            .map((person) => DataRow(cells: [
-                  DataCell(Text(person.firstname),
-                      onTap: () => print('aelected')),
-                  DataCell(Text(person.lastname),
-                      onTap: () => print('aelected')),
-                ]))
-            .toList());
+  SingleChildScrollView datatable() {
+    return SingleChildScrollView(
+      child: DataTable(
+          sortAscending: sort,
+          sortColumnIndex: sortColumn,
+          columns: [
+            DataColumn(
+                label: Text('firstname'),
+                tooltip: 'Firstname',
+                onSort: (columnIndex, ascending) {
+                  setState(() {
+                    sort = !sort;
+                    sortColumn = columnIndex;
+                  });
+                  onSortColumn(columnIndex, ascending);
+                }),
+            DataColumn(
+                label: Text('Last name'),
+                tooltip: 'this is the lastname',
+                onSort: (columnIndex, ascending) {
+                  setState(() {
+                    sort = !sort;
+                    sortColumn = columnIndex;
+                  });
+                  onSortColumn(columnIndex, ascending);
+                }),
+          ],
+          rows: persons
+              .map((person) => DataRow(cells: [
+                    DataCell(Text(person.firstname),
+                        onTap: () => print('aelected')),
+                    DataCell(Text(person.lastname),
+                        onTap: () => print('aelected')),
+                  ]))
+              .toList()),
+    );
   }
 
   @override
@@ -79,7 +81,7 @@ class _DataTablesState extends State<DataTables> {
         body: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Center(child: datatable())],
+          children: [Expanded(child: Center(child: datatable()))],
         ),
       ),
     );
