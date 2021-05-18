@@ -121,12 +121,13 @@ import 'package:flutter/material.dart';
 
 import 'APiDataInList.dart';
 import 'DataTables.dart';
+import 'Stacks.dart';
 import 'WowPizzaProject/HomePage.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: DataTables(),
+    home: StackWidget(),
     routes: {
       '/facebook': (context) => FaceBookWebVIew(),
       '/twitter': (context) => TwitterWebVIew(),
