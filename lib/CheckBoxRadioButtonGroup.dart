@@ -11,6 +11,14 @@ class CheckBoxRadioButtonGroup extends StatefulWidget {
 
 class _CheckBoxRadioButtonGroupState extends State<CheckBoxRadioButtonGroup> {
   DateTime date1 = DateTime.now();
+  TimeOfDay timeOfDay = new TimeOfDay.now();
+  TimeOfDay timePicked;
+  Future<Null> selectedTime(BuildContext context) async {
+    timePicked = await showTimePicker(context: context, initialTime: timeOfDay);
+    setState(() {
+      timeOfDay = timePicked;
+    });
+  }
 
   Future<Null> selectDate(BuildContext context) async {
     DateTime picked = await showDatePicker(
@@ -72,6 +80,24 @@ class _CheckBoxRadioButtonGroupState extends State<CheckBoxRadioButtonGroup> {
                 Text(
                   '${date1.year} - ${date1.month} - ${date1.day}'.toString(),
                   style: TextStyle(fontSize: 20.0),
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  'Delivery time',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                IconButton(
+                  icon: Icon(Icons.access_time),
+                  onPressed: () {
+                    selectedTime(context);
+                  },
+                ),
+                Text(
+                  '${timeOfDay.hour} : ${timeOfDay.minute}',
+                  style: TextStyle(fontSize: 20),
                 )
               ],
             )

@@ -126,7 +126,7 @@ import 'WowPizzaProject/HomePage.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: PizzaHomePage(),
+    home: CheckBoxRadioButtonGroup(),
     routes: {
       '/facebook': (context) => FaceBookWebVIew(),
       '/twitter': (context) => TwitterWebVIew(),
