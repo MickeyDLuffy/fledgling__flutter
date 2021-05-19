@@ -157,6 +157,41 @@ class _CheckBoxRadioButtonGroupState extends State<CheckBoxRadioButtonGroup> {
                   style: TextStyle(fontSize: 20),
                 )
               ],
+            ),
+            Row(
+              children: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.teal),
+                    onPressed: () {
+                      return showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('Request submision'),
+                              content: Center(
+                                  child: Text(
+                                'DO u wanna submit?',
+                              )),
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('Yes')),
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('No'))
+                              ],
+                            );
+                          });
+                    },
+                    child: Text(
+                      'Send request',
+                      style: TextStyle(fontSize: 20),
+                    ))
+              ],
             )
           ],
         ),
