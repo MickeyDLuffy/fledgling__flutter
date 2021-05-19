@@ -11,6 +11,16 @@ class CheckBoxRadioButtonGroup extends StatefulWidget {
 
 class _CheckBoxRadioButtonGroupState extends State<CheckBoxRadioButtonGroup> {
   DateTime date1 = DateTime.now();
+  TimeOfDay timeOfDay = new TimeOfDay.now();
+  TimeOfDay timePicked;
+  bool switchValue = false;
+  var sliderValue = 0.0;
+  Future<Null> selectedTime(BuildContext context) async {
+    timePicked = await showTimePicker(context: context, initialTime: timeOfDay);
+    setState(() {
+      timeOfDay = timePicked;
+    });
+  }
 
   Future<Null> selectDate(BuildContext context) async {
     DateTime picked = await showDatePicker(
@@ -73,6 +83,114 @@ class _CheckBoxRadioButtonGroupState extends State<CheckBoxRadioButtonGroup> {
                   '${date1.year} - ${date1.month} - ${date1.day}'.toString(),
                   style: TextStyle(fontSize: 20.0),
                 )
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  'Delivery time',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                IconButton(
+                  icon: Icon(Icons.access_time),
+                  onPressed: () {
+                    selectedTime(context);
+                  },
+                ),
+                Text(
+                  '${timeOfDay.hour} : ${timeOfDay.minute}',
+                  style: TextStyle(fontSize: 20),
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 300,
+                  child: Slider(
+                    value: sliderValue,
+                    label: '${sliderValue}',
+                    min: 0,
+                    max: 100,
+                    divisions: 10,
+                    activeColor: Colors.red,
+                    onChanged: (newRating) {
+                      setState(() {
+                        sliderValue = newRating;
+                      });
+                    },
+                  ),
+                )
+              ],
+            ),
+            Expanded(
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    'Number of Pizza: $sliderValue',
+                    style: TextStyle(fontSize: 15),
+                  )
+                ],
+              ),
+            ),
+            Row(
+              children: [
+                Text(
+                  'Enable Location :',
+                  style: TextStyle(fontSize: 20),
+                ),
+                Switch(
+                    value: switchValue,
+                    activeColor: Colors.green,
+                    inactiveThumbColor: Colors.red,
+                    activeTrackColor: Colors.green[300],
+                    onChanged: (bool value) {
+                      setState(() {
+                        switchValue = value;
+                      });
+                    }),
+                Text(
+                  switchValue ? 'Yes' : 'No',
+                  style: TextStyle(fontSize: 20),
+                )
+              ],
+            ),
+            Row(
+              children: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.teal),
+                    onPressed: () {
+                      return showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('Request submision'),
+                              content: Center(
+                                  child: Text(
+                                'DO u wanna submit?',
+                              )),
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('Yes')),
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('No'))
+                              ],
+                            );
+                          });
+                    },
+                    child: Text(
+                      'Send request',
+                      style: TextStyle(fontSize: 20),
+                    ))
               ],
             )
           ],
