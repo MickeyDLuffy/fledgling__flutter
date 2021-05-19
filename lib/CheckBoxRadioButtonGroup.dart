@@ -13,6 +13,7 @@ class _CheckBoxRadioButtonGroupState extends State<CheckBoxRadioButtonGroup> {
   DateTime date1 = DateTime.now();
   TimeOfDay timeOfDay = new TimeOfDay.now();
   TimeOfDay timePicked;
+  bool switchValue = false;
   var sliderValue = 0.0;
   Future<Null> selectedTime(BuildContext context) async {
     timePicked = await showTimePicker(context: context, initialTime: timeOfDay);
@@ -134,6 +135,28 @@ class _CheckBoxRadioButtonGroupState extends State<CheckBoxRadioButtonGroup> {
                   )
                 ],
               ),
+            ),
+            Row(
+              children: [
+                Text(
+                  'Enable Location :',
+                  style: TextStyle(fontSize: 20),
+                ),
+                Switch(
+                    value: switchValue,
+                    activeColor: Colors.green,
+                    inactiveThumbColor: Colors.red,
+                    activeTrackColor: Colors.green[300],
+                    onChanged: (bool value) {
+                      setState(() {
+                        switchValue = value;
+                      });
+                    }),
+                Text(
+                  switchValue ? 'Yes' : 'No',
+                  style: TextStyle(fontSize: 20),
+                )
+              ],
             )
           ],
         ),
