@@ -13,6 +13,7 @@ class _CheckBoxRadioButtonGroupState extends State<CheckBoxRadioButtonGroup> {
   DateTime date1 = DateTime.now();
   TimeOfDay timeOfDay = new TimeOfDay.now();
   TimeOfDay timePicked;
+  var sliderValue = 0.0;
   Future<Null> selectedTime(BuildContext context) async {
     timePicked = await showTimePicker(context: context, initialTime: timeOfDay);
     setState(() {
@@ -100,6 +101,39 @@ class _CheckBoxRadioButtonGroupState extends State<CheckBoxRadioButtonGroup> {
                   style: TextStyle(fontSize: 20),
                 )
               ],
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 300,
+                  child: Slider(
+                    value: sliderValue,
+                    label: '${sliderValue}',
+                    min: 0,
+                    max: 100,
+                    divisions: 10,
+                    activeColor: Colors.red,
+                    onChanged: (newRating) {
+                      setState(() {
+                        sliderValue = newRating;
+                      });
+                    },
+                  ),
+                )
+              ],
+            ),
+            Expanded(
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    'Number of Pizza: $sliderValue',
+                    style: TextStyle(fontSize: 15),
+                  )
+                ],
+              ),
             )
           ],
         ),
