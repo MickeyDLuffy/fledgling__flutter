@@ -9,9 +9,12 @@ class ModalButtomSheetDemo extends StatefulWidget {
 }
 
 class _ModalButtomSheetDemoState extends State<ModalButtomSheetDemo> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text(
           'Dashboard',
@@ -24,61 +27,43 @@ class _ModalButtomSheetDemoState extends State<ModalButtomSheetDemo> {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            getBottomSheet(context);
+            var sheetController = _scaffoldKey.currentState
+                .showBottomSheet((context) => BottomSheetWidget());
+            sheetController.closed.then((value) {
+              print('closed');
+            });
           },
+          // _bottomSheet(context);
+
           style: ElevatedButton.styleFrom(primary: Colors.deepPurple),
           child: Text('Login'),
         ),
       ),
     );
   }
+}
 
-  void getBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-        context: context,
-        builder: (BuildContext context) {
-          return Wrap(children: [
-            Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                          fontSize: 18.0, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  ListTile(
-                    leading: Image(
-                      height: 40.0,
-                      image: NetworkImage(
-                          'https://e7.pngegg.com/pngimages/249/19/png-clipart-google-logo-g-suite-google-guava-google-plus-company-text.png'),
-                    ),
-                    title: Text(
-                      'Login with Google',
-                      style: TextStyle(fontSize: 20.0),
-                    ),
-                  ),
-                  ListTile(
-                    leading: Image(
-                      height: 40.0,
-                      image: NetworkImage(
-                          'https://i.pinimg.com/originals/d8/ff/30/d8ff3064a3067ac45a70f762f4977d90.png'),
-                    ),
-                    title: Text(
-                      'Login with Facebook',
-                      style: TextStyle(fontSize: 20.0),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ]);
-        });
+class BottomSheetWidget extends StatelessWidget {
+  const BottomSheetWidget({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      color: Colors.amberAccent,
+      child: Center(
+        child: Column(
+          children: [
+            Text('Koenig SOlutions'),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('closed'),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
