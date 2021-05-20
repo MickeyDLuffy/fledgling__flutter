@@ -1,3 +1,4 @@
+import 'package:falcon_wings/model/AppBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -6,39 +7,7 @@ class PizzaHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Colors.orange,
-          shadowColor: Colors.cyanAccent,
-          elevation: 15,
-          title: Row(
-            children: [
-              Text(
-                'WOW Pizza',
-                style: TextStyle(color: Theme.of(context).accentColor),
-              ),
-              Expanded(
-                  child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                    icon: FaIcon(FontAwesomeIcons.twitter),
-                    color: Theme.of(context).accentColor,
-                    onPressed: () {
-                      print('Twitter clicked');
-                      Navigator.pushNamed(context, '/twitter');
-                    },
-                  ),
-                  IconButton(
-                    icon: FaIcon(FontAwesomeIcons.facebook),
-                    color: Theme.of(context).accentColor,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/facebook');
-                    },
-                  ),
-                ],
-              ))
-            ],
-          )),
+      appBar: new PizzaAppBar(child: Text('')),
       body: ListView(
         children: [
           Container(
