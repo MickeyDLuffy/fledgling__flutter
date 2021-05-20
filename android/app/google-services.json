@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "607442038418",
+    "project_id": "fir-3d16e",
+    "storage_bucket": "fir-3d16e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607442038418:android:cba64a01b6dec74ca4c04b",
+        "android_client_info": {
+          "package_name": "com.example.falcon_wings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607442038418-8mrdm177ogc0cfv1dmt10d8j7495bthj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9RNIpDGCaQwEMFkeDakzfSHxcMfIhxjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607442038418-8mrdm177ogc0cfv1dmt10d8j7495bthj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
