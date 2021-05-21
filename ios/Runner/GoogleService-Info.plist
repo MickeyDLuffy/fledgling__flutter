@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.falconWings</string>
+	<string>com.dluffy.falconWings</string>
 	<key>PROJECT_ID</key>
 	<string>fir-3d16e</string>
 	<key>STORAGE_BUCKET</key>

@@ -1,3 +1,4 @@
+import 'package:falcon_wings/screens/Firestore.dart';
 import 'package:falcon_wings/screens/HomePage.dart';
 import 'package:falcon_wings/screens/login-screen.dart';
 import 'package:falcon_wings/screens/new-account.dart';
@@ -15,7 +16,8 @@ void main() async {
       '/create-account': (context) => NewAccountScreen(),
       '/login': (context) => LoginScreen(),
       '/service': (context) => Service(),
-      '/home': (context) => Homepage()
+      '/home': (context) => Homepage(),
+      '/firestore':(context) => Firestore()
     },
   ));
 }

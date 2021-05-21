@@ -38,6 +38,14 @@ class _HomepageState extends State<Homepage> {
                     'Login',
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   )),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/firestore');
+                  },
+                  child: Text(
+                    'My Cloud Firestore',
+                    style: TextStyle(fontSize: 20.0, color: Colors.white),
+                  )),
             ],
           ),
         ),
